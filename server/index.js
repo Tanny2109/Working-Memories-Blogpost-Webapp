@@ -15,7 +15,9 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
 app.use('/posts', postRoutes);
-
+app.get('/', (req, res) => {
+  res.send("Welcome to Tanmay's Blogpost!!");
+});
 //tutorial method of connecting
 const CONNECTION_URL = "mongodb+srv://tanmaysutar:hansipansi21@cluster0.6zida.mongodb.net/<dbname>?retryWrites=true&w=majority";
 const PORT = process.env.PORT|| 1111;
